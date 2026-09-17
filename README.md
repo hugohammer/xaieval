@@ -1,9 +1,6 @@
 # Evaluating XAI methods by predicting from explanations
 
-Experiment code for the paper. Rewritten from scratch; it does not share code
-with the bachelor thesis.
-
-Every explanation method induces a predictor. This code builds that predictor
+Experiment code for the paper. Every explanation method induces a predictor. This code builds that predictor
 for PDP, ALE, SHAP and LIME, and measures how well it predicts on held-out data
 against two targets: the original outcome `y`, and the black box's own score
 `f(x)` (an out-of-sample, global fidelity measure).
