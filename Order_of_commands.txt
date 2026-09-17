@@ -1,0 +1,13 @@
+python3 run_experiments.py --repeats 20 --tuning per_repeat --results-dir ../Results_main
+
+
+
+
+python3 make_datasets.py --synthetic       # the synthetic suite (no network)
+python3 make_datasets.py --openml-suite    # 15 curated tabular benchmarks
+python3 make_datasets.py --openml mydata:1590:classification
+python3 make_datasets.py --inspect         # pre-flight: is each dataset usable?
+
+python3 -m pytest tests -q                      # 14 tests, ~20 s
+python3 run_experiments.py --quick              # smoke test, a few minutes
+python3 run_experiments.py                      # the real run
